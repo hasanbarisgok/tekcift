@@ -1,0 +1,37 @@
+n_Degeri = int(input("Kaç adet sayı girilecek? Lütfen girdi yapınız:"))
+tum_Sayilar = []
+tek_Sayilar = []
+cift_Sayilar = []
+
+for a in range(0, n_Degeri):
+    tum_Sayilar.append(int(input(f"{a + 1}. sayıyı giriniz:")))
+
+
+def sayilari_Ayir():
+    for b in range(len(tum_Sayilar)):
+        if tum_Sayilar[b] % 2 == 0:
+            cift_Sayilar.append(tum_Sayilar[b])
+        else:
+            tek_Sayilar.append(tum_Sayilar[b])
+    print(f"Tek sayılar: {tek_Sayilar}\nÇift sayılar: {cift_Sayilar}")
+
+
+def liste_Toplam():
+    toplam_T = 0
+    toplam_C = 0
+    for c in range(len(tek_Sayilar)):
+        toplam_T += tek_Sayilar[c]
+    for d in range(len(cift_Sayilar)):
+        toplam_C += cift_Sayilar[d]
+    print(f"Tek sayılar dizisinin toplamı: {toplam_T}\nÇift sayılar dizisinin toplamı: {toplam_C}")
+
+
+def sayilari_Sirala():
+    tek_Sayilar.sort()
+    cift_Sayilar.sort(reverse=True)
+    print(
+        f" SAYILARIN BÜYÜKTEN KÜÇÜĞE VE KÜÇÜKTEN BÜYÜĞE SIRALANMIŞ HALLERİ:\n TEK SAYILAR KÜÇÜKTEN BÜYÜĞE: {tek_Sayilar} \n ÇİFT SAYILAR BÜYÜKTEN KÜÇÜĞE: {cift_Sayilar}")
+
+sayilari_Ayir()
+liste_Toplam()
+sayilari_Sirala()
